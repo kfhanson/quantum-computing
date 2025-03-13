@@ -11,7 +11,7 @@ def is_quantum_state(a, b):
   else:
     return "no"
   
-def is_symbolic(a_str, b_str):
+def is_quantum_state_symbolic(a_str, b_str):
   try:
     theta = symbols('theta')
     a_expr = sympy.sympify(a_str)
@@ -61,3 +61,10 @@ if input_type == '1':
 
   result = is_quantum_state(a, b)
   print(f"Is the vector ({a})|0> + ({b})|1> a quantum state? {result}")
+
+if input_type == '2':
+  a_str = input("Input the expression of a (e.g., cos(theta)): ")
+  b_str = input("Input the expression of b (e.g., I*sin(theta)): ")
+
+  result = is_quantum_state_symbolic(a_str, b_str)
+  print(f"Is the vector ({a_str})|0> + ({b_str})|1> a quantum state? {result}")2
